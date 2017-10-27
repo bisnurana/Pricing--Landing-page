@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/bundle.js"],"names":["alert"],"mappings":"aAAAA,MAAM","file":"bundle.js","sourcesContent":["alert('Script says hello!');"]}
