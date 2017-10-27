@@ -1,4 +1,4 @@
 @import 'typography';
-body{
-	color:green;
-}
+@import 'color';
+@import 'base';
+@import 'normalize';
