@@ -1,1 +1,1 @@
-{"version":3,"sources":["js/bundle.js"],"names":[],"mappings":"AAAA","file":"bundle.js","sourcesContent":["\"use strict\";"]}
+{"version":3,"sources":["js/bundle.js"],"names":["hideLoader","document","getElementById","style","display"],"mappings":"aAAA,SAASA,aACRC,SAASC,eAAe,UAAUC,MAAMC,QAAQ","file":"bundle.js","sourcesContent":["function hideLoader() {\r\n\tdocument.getElementById('loader').style.display='none';\r\n};"]}

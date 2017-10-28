@@ -10,9 +10,29 @@ body{
 	font-size:16px;
 	line-height:1.6;
 }
+#loader{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	border: 5px solid $white;
+	border-top: 5px solid $light-orange;
+	border-radius: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	box-shadow: 0 0 10px $black;
+	animation: loading 2s linear infinite;
+}
+@keyframes loading{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
 .container{
 	max-width: 1080px;
 	margin:0 auto;
+	padding:0 0.5rem;
 }
 .offer-wrapper{
 	padding: 5rem 0;
@@ -57,20 +77,22 @@ body{
 .sign-in{
 	color:$white;
 	padding:0.2rem 1rem;
+	text-decoration: none;
 }
 .pricing-wrapper{
 	margin:3rem auto;
 }
 .pricing-switcher{
+	box-sizing: border-box;
 	position: relative;
 	margin: 0 auto;
 	max-width:16rem;
 	border:1px solid $light-orange;
-	border-radius: 2.2rem;
-	height: 2.2rem;
-	line-height: 2.2rem;
+	border-radius: 2rem;
+	line-height: 2rem;
 	z-index: 1;
 	label{
+		line-height: 2rem;
 		font-size: 1rem;
 		color:#fff;
 		width: 32%;
@@ -81,7 +103,7 @@ body{
 	.switch{
 		position: absolute;
 		content:'';
-		width:33%;
+		width:33.33%;
 		height: 100%;
 		background-color:$light-orange;
 		border-radius:2rem;
@@ -90,14 +112,20 @@ body{
 		transition: left 0.3s ease;
 	}
 }
+// Switching toggle animation
+.trial-wrapper,.standard-wrapper,.business-wrapper{
+	display: none;
+}
 #trial-plan{
 	display: none;
 	&:checked ~ .pricing-wrapper{
 		.trial-wrapper{
 		display:block;
+		animation: fade-in 0.5s ease-in;
 		}
 		.standard-wrapper,.business-wrapper{
-		display:none;
+		display: none;
+		animation: fade-in .3s ease-out reverse;
 		}
 		.switch{
 		left:0%;
@@ -109,12 +137,14 @@ body{
 	&:checked ~ .pricing-wrapper{
 		.standard-wrapper{
 		display:block;
+		animation: fade-in 0.5s ease-in;
 		}
 		.trial-wrapper,.business-wrapper{
-		display:none;
+		display: none;
+		animation: fade-in .3s ease-out reverse;
 		}
 		.switch{
-		left: 33%;
+		left: 33.33%;
 		}
 	}
 }
@@ -123,17 +153,23 @@ body{
 	&:checked ~ .pricing-wrapper{
 		.business-wrapper{
 		display:block;
+		animation: fade-in 0.5s ease-in;
 		}
 		.trial-wrapper,.standard-wrapper{
-		display:none;
+		display: none;
+		animation: fade-in .3s ease-out reverse;
 		}
 		.switch{
-		left:68%;
+		left:66.9%;
 		}
 	}
 }
-
+@keyframes fade-in{
+	from{opacity: 0;transform: scale(0.99);}
+	to{opacity: 1;transform: scale(1);}
+}
 .free-plan,.partial-plan{
+	border-top:0.5rem solid $light-orange;
 	background-color: $white;
 	padding: 0.5rem 2rem;
 	margin:1rem 2rem;
@@ -162,6 +198,8 @@ h3{
 	margin-top: 1rem;
 	margin-bottom: 2rem;
 	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .pricing-monthly{
 	font-family: Lato;
@@ -185,7 +223,7 @@ h3{
 .btn-cta{
 	display: block;
 	text-align: center;
-	background-color: $light-orange;
+	background: linear-gradient(to right,$orange 0%,$light-orange 100%);
 	width: 8rem;
 	margin: 2rem auto;
 	padding:0.5rem 1rem;
@@ -195,27 +233,37 @@ h3{
 	transition:all 0.3s ease;
 	transform:scale(1);
 	&:hover{
+		background: linear-gradient(to right,$light-orange 0%,$orange 100%);
 		transform:scale(1.1);
 	}
 }
 .feature-list-title{
+	text-align: center;
 	font-size: 1.2rem;
 	color: $white;
 	margin-top:3rem;
-	margin-bottom: 0.5rem;
+	margin-bottom:2rem;
 	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
-	@media screen and (max-width: 768px){
-		text-align: center;
-
+	position: relative;
+	&:before{
+		content:'';
+		position: absolute;
+		left:50%;
+		transform: translateX(-50%);
+		width: 20%;
+		height: 0.2rem;
+		background-color: $light-orange;
+		bottom:-0.5rem;
+		margin: 0 auto;
 	}
 }
 .feature-list{
 	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
-	list-style-type: none;
+	list-style-type:none;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -235,4 +283,25 @@ h3{
 	margin-top:0.5rem;
 	margin-bottom:0.5rem;
 	text-align: left;
+}
+
+.contact-wrapper{
+	padding-top:5rem;
+	background-color: #363636;
+	.col50{
+		margin: 0 auto;
+		img{
+		display: block;
+		max-width: 540px;
+		min-width: 240px;
+		width: 100%;
+		height: auto;
+		}
+	}
+}
+footer{
+	background-color: $black;
+	padding:2rem 0;
+	text-align: center;
+	color: $white;
 }

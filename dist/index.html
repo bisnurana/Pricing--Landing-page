@@ -9,15 +9,16 @@
         <link rel="apple-touch-icon" href="">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body onload="hideLoader()">
         <!-- Add your site or application content here -->
+        <div id="loader"></div>
         <header class="display-flex align-center space-between bg-dark">
             <span class="brand">OPTIMIZE</span> 
-            <span class="sign-in">Log In</span>
+            <a class="sign-in" href="#">Log In</a>
         </header>
         <div class="offer-wrapper">
             <div class="container">
-                <h1 class="main-title text-center">Start analyzing stuffs that matters.</h1>
+                <h1 class="main-title text-center">Start measuring stuffs that matters.</h1>
                 <input type="radio" name="type-1" id="trial-plan" checked>
                 <input type="radio" name="type-1" id="standard-plan">
                 <input type="radio" name="type-1" id="business-plan">
@@ -28,13 +29,14 @@
                         <label for="business-plan">Business</label>
                         <span class="switch"></span>
                     </div> 
+
                     <div class="trial-wrapper container">
                         <h2 class="text-center package-intro">See before you pay.</h2>
                         <p class="text-center package-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                         <div class="package-wrapper display-flex justify-center">
                             <div class="free-plan">
                                 <h3>Free</h3>
-                                <span class="pricing-monthly"><sup>$</sup>0</span>
+                                <span class="pricing-monthly"><sup>$</sup>0.00</span>
                                 <span class="plan-desc">Free with limited features.</span>
                                 <a class="btn-cta" href="#">Get started</a>
                                 
@@ -51,20 +53,21 @@
 
                     <div class="standard-wrapper container">
                         <h2 class="text-center package-intro">Upgrade as you grow.</h2>
-                        <p class="text-center package-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p class="text-center package-desc">It is a long established fact that a reader will be distracted by the readable content of a page when .</p>
                         <div class="package-wrapper display-flex justify-center">
                             <div class="free-plan">
-                                <h3>Free</h3>
-                                <span class="pricing-monthly"><sup>$</sup>0</span>
-                                <span class="plan-desc">Free with limited features.</span>
+                                <h3>Standard</h3>
+                                <span class="pricing-monthly"><sup>$</sup>14.99</span>
+                                <span class="plan-billing">Billed monthly/annually.</span>
+                                <span class="plan-desc">Analyzes upto 1000 websites.</span>
                                 <a class="btn-cta" href="#">Get started</a>
                                 
                             </div>
                             <div class="partial-plan">
-                                <h3>Partial</h3>
-                                <span class="pricing-monthly"><sup>$</sup>14.90/mo</span>
+                                <h3>Standard Plus</h3>
+                                <span class="pricing-monthly"><sup>$</sup>39.90/mo</span>
                                 <span class="plan-billing">Billed monthly/annually.</span>
-                                <span class="plan-desc">Fully featured for first 7 days.</span>
+                                <span class="plan-desc">Analyzes upto 2000 websites.</span>
                                 <a class="btn-cta" href="#">Get started</a> 
                             </div>
                         </div>
@@ -75,33 +78,34 @@
                         <p class="text-center package-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                         <div class="package-wrapper display-flex justify-center">
                             <div class="free-plan">
-                                <h3>Free</h3>
-                                <span class="pricing-monthly"><sup>$</sup>0</span>
-                                <span class="plan-desc">Free with limited features.</span>
+                                <h3>Business</h3>
+                                <span class="pricing-monthly"><sup>$</sup>199.90</span>
+                                <span class="plan-billing">Billed monthly/annually.</span>
+                                <span class="plan-desc">Analyzes upto 5000 websites.</span>
                                 <a class="btn-cta" href="#">Get started</a>
                                 
                             </div>
                             <div class="partial-plan">
-                                <h3>Partial</h3>
-                                <span class="pricing-monthly"><sup>$</sup>14.90/mo</span>
+                                <h3>Business Plus</h3>
+                                <span class="pricing-monthly"><sup>$</sup>299.90/mo</span>
                                 <span class="plan-billing">Billed monthly/annually.</span>
-                                <span class="plan-desc">Fully featured for first 7 days.</span>
+                                <span class="plan-desc">Fully featured for unlimited websites.</span>
                                 <a class="btn-cta" href="#">Get started</a> 
                             </div>
                         </div>
                     </div> 
                     <div class="feature-wrapper">
-                        <h4 class="feature-list-title">Trial plan features:</h3>
+                        <h4 class="feature-list-title">All packages features:</h3>
                         <ul class="feature-list">
-                            <li class="feature-list-items">List of items here</li>
-                            <li class="feature-list-items">List of some items here</li>
-                            <li class="feature-list-items">List of items here</li>
-                            <li class="feature-list-items">List of items are here</li>
-                            <li class="feature-list-items">List of items here</li>
-                            <li class="feature-list-items">List of there items here</li>
-                            <li class="feature-list-items">List of items here</li>
-                            <li class="feature-list-items">List of items random here</li>
-                            <li class="feature-list-items">List can of items here</li>
+                            <li class="feature-list-items">● Random List of items here</li>
+                            <li class="feature-list-items">● List of random some items here</li>
+                            <li class="feature-list-items">● List random of items here</li>
+                            <li class="feature-list-items">● List of items that are here</li>
+                            <li class="feature-list-items">● List of items here are random</li>
+                            <li class="feature-list-items">● List of there items here</li>
+                            <li class="feature-list-items">● List of items here makes no sense</li>
+                            <li class="feature-list-items">● List of items are random  every here</li>
+                            <li class="feature-list-items">● List can of random phrase items here</li>
                         </ul>
                     </div>     
                 </div>
@@ -110,11 +114,17 @@
             </div> 
         </div>
         <div class="contact-wrapper">
-            <div class="col50">Contact</div>
-            <div class="col50">Img</div>
+            <div class="container display-flex justify-center">
+                <div class="col50">
+                    <h2 class="text-center package-intro">Questions?<br>How can we help you.</h2>
+                    <a class="btn-cta" href="#">Get started</a>
+
+                </div>
+                <div class="col50"><img src="img/placeholder-image.png"></div>
+            </div>
         </div>
         <footer>
-            
+            &copy; 2017 Optimize
         </footer>
 
            
